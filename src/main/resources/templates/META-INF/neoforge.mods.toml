@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+displayURL="https://gitlab.com/stalking-dragons/minecraft/expedition-core"
+logoFile="icon.png"
+credits="Developed by Stalking Dragons"
+description='''Expedition Core is the adventure/world library for the Majestic mod ecosystem: helpers for registering and travelling to custom dimensions, jigsaw structure utilities, a boss-encounter framework (phased bar, arena lock, loot, music, GeckoLib render base) and loot/advancement injection. It ships no concrete content — mods build on its API. Part of the Majestic ecosystem.'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="geckolib"
+    type="required"
+    versionRange="[${geckolib_version},)"
+    ordering="AFTER"
+    side="BOTH"
+
+# common_toolkit is added here in a later milestone, once its 1.21.1 Maven coordinates
+# are pinned. It stays external (never bundled).
